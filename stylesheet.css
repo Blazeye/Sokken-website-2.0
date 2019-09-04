@@ -1,0 +1,284 @@
+body {
+  background-color: #cce6ff;
+}
+
+.title{
+  color: #fff8c5;
+  text-shadow:
+-1px -1px 0 #800000,
+ 1px -1px 0 #800000,
+ -1px 1px 0 #800000,
+  2px 2px 0 #800000;;
+}
+
+#cloud-circle {
+  width: 40vw;
+  height:20vw;
+  background: #000;
+  border-radius: 50%;
+  filter: url(#filter);
+  box-shadow: 400px 400px 60px 0px #fff; /* Increase shadow offset */
+  position: absolute; /* Take the parent out of the document flow */
+  top: -380px; /* Move a little down */
+  left: -380px; /* Move a little right */
+  z-index: -1;
+}
+
+.shopping-cart-img{
+  max-width:20px;
+}
+
+.catchphrase{
+  color: #800000;
+}
+
+@media screen and (max-width: 575.5px) {
+  .larger-buttons-at-smaller-viewport-vw {
+    width: 55vw;
+  }
+}
+
+@media screen and (max-width: 575.5px) {
+  .responsive-with-vw {
+    font-size: 2.9vw;
+  }
+}
+
+@media screen and (min-width: 380px) {
+  .responsive-bigger-after-380 {
+    font-size: 4vw;
+  }
+}
+
+@media screen and (min-width: 575.5px) {
+  .responsive-with-vw-increasing_width {
+    font-size: 1.5vw;
+  }
+}
+
+.medium_size {
+  max-height:400px;
+  max-width:auto;
+}
+
+.small_size {
+  max-height:200px;
+  max-width:auto;
+}
+
+.large_size {
+  max-height:800px;
+  max-width:auto;
+}
+
+.jumbotron {
+  margin:0;
+  padding:2rem 1rem;
+  background-color: transparent;
+  text-shadow:
+    3px 3px 0 #800000,
+  -1px -1px 0 #800000,
+   1px -1px 0 #800000,
+   -1px 1px 0 #800000,
+    1px 1px 0 #800000;
+  color: #fff8c5;
+}
+
+.shopping-cart-button{
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  padding:0;
+  margin:0;
+}
+/*
+body
+{
+    width: 800px;
+    margin:auto;
+}
+
+.txtstandard
+{
+    text-align: justify;
+    font-size: 12px;
+    padding: 25px;
+    margin: 25px;
+    border: 1px solid grey;
+    display: inline-block;
+}
+
+.txttable{
+    text-align: center;
+    font-size: 16px;
+}
+
+aside{
+  text-align: center;
+  font-size: 12px;
+  color: grey;
+}
+
+.txtmessage
+{
+    font-size: 12px;
+    padding: 12px;
+}
+
+form.long_form
+{
+    height: 200px;
+}
+
+table a{
+  text-decoration: none;
+    color: white;
+    border:white solid 1px;
+    background-color: dodgerblue;
+    padding:2px 10%;
+}
+
+.error
+{
+    color:red;
+    vertical-align:top;
+    float:right;
+}
+
+label
+{
+    width: 25%;
+    margin: 6px;
+    display:inline-block;
+    float: left;
+}
+.inputbar{
+    width: 50%;
+    margin: 6px;
+    display: block;
+    float:left;
+}
+
+h1{
+    text-align: center;
+    font-size: 48px;
+    font-family: 'Lato', sans-serif;
+}
+
+.navbar{
+    background-color: dodgerblue;
+    font-size: 0;
+    text-align: center;
+}
+
+.navbar ul li{
+    display: inline-block;
+}
+.navbar ul li a{
+    font-size:18px;
+    text-decoration: none;
+    color: white;
+    margin: 0 0.5em;
+    padding: 0 0.1em;
+    border-width: 0.1em;
+    border-style: solid;
+}
+
+.home
+{
+    background-color: black;
+    border-color: transparent;
+}
+
+
+
+footer{
+    font-size: 10px;
+    text-align: right;
+    color: white;
+    background-color: black;
+}
+
+a:hover{
+    background-color: white;
+    border-color:transparent;
+    color: black;
+}
+
+a:active{
+   background-color: orange;
+   color: white;
+   border-color:transparent;
+}
+
+.nav-link ul li a:hover
+{
+
+   color: black;
+
+}
+
+.nav-link ul li a:active
+{
+   color: white;
+}
+
+address
+{
+    text-align: left;
+    white-space: pre;
+}
+
+table{
+    width:50%;
+    margin:auto;
+    padding:5px;
+    border:grey solid 1px;
+}
+
+.button
+{
+  padding: 10px 20px;
+}
+
+input[type=submit]
+{
+  width: 15%;
+  margin: 3px 0 0 490px;
+  border: 1px solid dodgerblue;
+  background-color: dodgerblue;
+  color: white;
+  padding:5px;
+}
+input[type=submit]:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+input[type=submit]:active {
+  background-color: orange;
+  border: orange;
+  color: white;
+  cursor: pointer;
+}
+
+.small_size {
+  height:100px;
+  width:auto;
+}
+
+.large_size {
+  width:650px;
+  height:auto;
+}
+
+.number_input{
+    padding:5px;
+    margin:5px 100px;
+}
+
+.float_right{
+  float: right;
+  margin:5px 40px;
+}*/
