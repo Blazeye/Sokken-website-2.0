@@ -26,5 +26,27 @@ class Session_Model
     }
   }
 
+  function addItemToCart($item)
+  {
+    if(!isset($_SESSION['item'])){$_SESSION['item']=array();}
+    $_SESSION['exists']=false;
+    foreach($_SESSION['item'] as $x => $value)
+    {
+      if($value['items_id']==$item['items_id'])
+      {
+        $_SESSION['item'][$x]['price']=$item['price'];
+        $_SESSION['item'][$x]['amount']++;
+        $_SESSION['exists']=true;
+        break;
+      }
+    }
+    if(!$_SESSION['exists'])
+    {
+      $item['amount']=1;
+      array_push($_SESSION['item'], $item);
+    }
+    return $_SESSION['item'];
+  }
+
 }
 ?>

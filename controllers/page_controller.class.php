@@ -53,11 +53,13 @@ class Page_Controller
                 break;
 
             case 'shop':
+                $model = new Shop_Model($this->model);
                 $controller = new Shop_Controller($this->model);
                 $controller->handleShop();
                 break;
 
             case 'shopping cart':
+                $model = new Shop_Model($this->model);
                 $controller = new Shop_Controller($this->model);
                 $controller->handleShoppingCart();
                 break;

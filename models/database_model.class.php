@@ -15,31 +15,31 @@ class Database_Model
     // Check connection
     if ($conn->connect_error)
     {
-        throw new Exception("connection failed ". mysqli_connect_error());
+      throw new Exception("connection failed ". mysqli_connect_error());
     }
     return $conn;
   }
 
   static public function findUserByEmail($email)
+  {
+    $conn = self::serverLogIn();
+    try
     {
-      $conn = self::serverLogIn();
-      try
-      {
-           $email = mysqli_real_escape_string($conn, $email);
+      $email = mysqli_real_escape_string($conn, $email);
 
-           $sql = "SELECT * FROM users WHERE email='".$email."'";
-           $result = mysqli_query($conn, $sql);
-           if($result==false)
-           {
-             throw new Exception("query failed ". $sql . "Err" . mysqli_error($conn));
-           }
-           return mysqli_fetch_assoc($result);
-       }
-      finally
+      $sql = "SELECT * FROM users WHERE email='".$email."'";
+      $result = mysqli_query($conn, $sql);
+      if($result==false)
       {
-           mysqli_close($conn);
+        throw new Exception("query failed ". $sql . "Err" . mysqli_error($conn));
       }
+      return mysqli_fetch_assoc($result);
     }
+    finally
+    {
+      mysqli_close($conn);
+    }
+  }
 
   static public function storeUser($name, $email, $password)
   {
@@ -51,17 +51,36 @@ class Database_Model
       $password = mysqli_real_escape_string($conn, $password);
 
       $sql = "INSERT INTO users (email, name, password)
-              VALUES ('$email', '$name', '$password')";
+        VALUES ('$email', '$name', '$password')";
       $result = mysqli_query($conn, $sql);
       if($result==false)
       {
-         throw new Exception("query failed ". $sql . "Err" . mysqli_error($conn));
+        throw new Exception("query failed ". $sql . "Err" . mysqli_error($conn));
       }
     }
-      finally
-      {
-         mysqli_close($conn);
-      }
+    finally
+    {
+      mysqli_close($conn);
     }
   }
+
+  static public function getAllItems()
+  {
+    $conn = self::serverLogIn();
+    try
+    {
+      $sql = "SELECT * FROM items";
+      $result = mysqli_query($conn, $sql);
+      if($result==false)
+      {
+        throw new Exception("query failed ". $sql . "Err" . mysqli_error($conn));
+      }
+      return mysqli_fetch_all($result, MYSQLI_ASSOC);
+    }
+    finally
+    {
+      mysqli_close($conn);
+    }
+  }
+}
 ?>
