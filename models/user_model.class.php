@@ -3,6 +3,7 @@ require_once 'page_model.class.php';
 
 class User_Model extends Page_Model
 {
+  public $comment = '';
   public $name = '';
   public $nameErr = '';
   public $email = '';
@@ -84,7 +85,7 @@ class User_Model extends Page_Model
   {
     $this->email = User_Model::testInput($this->email);
     $this->name = User_Model::testInput($this->name);
-    $this->comment = User_Model::testInput($This->comment);
+    $this->comment = User_Model::testInput($this->comment);
 
     if($this->isPost)
     {

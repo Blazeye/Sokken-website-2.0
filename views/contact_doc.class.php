@@ -7,4 +7,14 @@ class Contact_Doc extends Form_Doc
     {
         parent::__construct($myData);
     }
+
+    protected function formContent()
+    {
+        $this->createInput('div_start', 'form-group row m-2');
+        $this->createInput('email', 'form-control col-md-6', $this->model->emailErr, 'Emailadres:', 'i.e. address@gmail.com', 'email', $value['email']='');
+        $this->createInput('textarea', 'form-control col-md-6','', ' ', 'Add your message here, please', '', $value['comment']='');
+        $this->createInput('hidden', 'form-control col-md-6','', '', '', 'page', $this->model->page);
+        $this->createInput('submit', 'btn btn-primary my-2','', '', '', 'submit', 'Verstuur');
+        $this->createInput('div_end');
+    }
 }

@@ -19,8 +19,8 @@ class Home_Doc extends Basic_Doc
     {
       /*$a = Database_Model::findUserByEmail($this->model->email);
       var_dump($a);*/
-      var_dump($this->model->email);
-      var_dump($this->model->name);
+      // var_dump($this->model->email);
+      // var_dump($this->model->name);
 
 
         echo '<div class="row justify-content-center"><div class="col-sm-8 col-md-6 border border-dark m-2 p-1">
