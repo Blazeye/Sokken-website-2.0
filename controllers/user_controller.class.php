@@ -56,6 +56,11 @@ class User_Controller
     $this->userModel->validateContactForm();
     //redirect to the contact page
     $view = new Contact_Doc($this->userModel);
+    if($this->userModel->valid)
+    {
+      $view = new Show_Thanks_Doc($this->userModel);
+      $this->userModel->generateMenu();
+    }
     $view->show();
   }
 

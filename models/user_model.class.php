@@ -4,6 +4,7 @@ require_once 'page_model.class.php';
 class User_Model extends Page_Model
 {
   public $comment = '';
+  public $commentErr = '';
   public $name = '';
   public $nameErr = '';
   public $email = '';
@@ -83,9 +84,9 @@ class User_Model extends Page_Model
 
   public function validateContactForm()
   {
-    $this->email = User_Model::testInput($this->email);
-    $this->name = User_Model::testInput($this->name);
-    $this->comment = User_Model::testInput($this->comment);
+    $this->email = User_Model::testInput(self::getPostVar('email'));
+    $this->name = User_Model::testInput(self::getPostVar('name'));
+    $this->comment = User_Model::testInput(self::getPostVar('comment'));
 
     if($this->isPost)
     {
@@ -96,10 +97,6 @@ class User_Model extends Page_Model
       else if(!filter_var($this->email, FILTER_VALIDATE_EMAIL))
       {
         $this->emailErr = 'You have not entered a valid email adress.';
-      }
-      else if((strlen($password)||strlen($password2))<3)
-      {
-        $this->nameErr = 'Your password is too short.';
       }
       else
       {
@@ -114,18 +111,20 @@ class User_Model extends Page_Model
     {
       $this->valid = false;
       $info = Database_Model::findUserByEmail($this->email);
-
-      if (empty($info))
+      if($this->isPost)
       {
-        $emailErr = 'User cannot be found. Please enter a different emailaddress.';
-      }
-      else if (trim($info['password'])!=$this->password)
-      {
-        $this->passwordErr = 'Wrong password. Please enter the correct password';
-      }
-      else
-      {
-        $this->valid = true;
+        if (empty($info))
+        {
+          $this->emailErr = 'User cannot be found. Please enter a different emailaddress.';
+        }
+        else if (trim($info['password'])!=$this->password)
+        {
+          $this->passwordErr = 'Wrong password. Please enter the correct password';
+        }
+        else
+        {
+          $this->valid = true;
+        }
       }
     }
     catch(Exception $e)

@@ -12,6 +12,7 @@ require_once 'views/login_doc.class.php';
 require_once 'views/register_doc.class.php';
 require_once 'views/shop_doc.class.php';
 require_once 'views/shop_cart_doc.class.php';
+require_once 'views/show_thanks_doc.class.php';
 require_once 'views/top_five_doc.class.php';
 
 session_start();
