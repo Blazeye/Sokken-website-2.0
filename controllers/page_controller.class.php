@@ -13,6 +13,7 @@ class Page_Controller
 
     public function handleRequest()
     {
+        echo "page_controller::handleRequest" . PHP_EOL;
       $this->model->getRequestedPage();
       $this->model->generateMenu();
 
@@ -48,19 +49,25 @@ class Page_Controller
 
             case 'logout':
                 $model = new User_Model($this->model);
-                $controller = new User_Controller($this->model);
+                $controller = new User_Controller($model);
                 $controller->handleLogout();
                 break;
 
             case 'shop':
                 $model = new Shop_Model($this->model);
-                $controller = new Shop_Controller($this->model);
+                $controller = new Shop_Controller($model);
                 $controller->handleShop();
+                break;
+            
+            case 'shop_detail':
+                $model = new Shop_Model($this->model);
+                $controller = new Shop_Controller($model);
+                $controller->handleShopDetail();
                 break;
 
             case 'shopping cart':
                 $model = new Shop_Model($this->model);
-                $controller = new Shop_Controller($this->model);
+                $controller = new Shop_Controller($model);
                 $controller->handleShoppingCart();
                 break;
         }

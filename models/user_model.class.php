@@ -17,15 +17,7 @@ class User_Model extends Page_Model
   //gets pageModel from Page_Model with page, isPost and menu
   public function __construct($pageModel)
   {
-      parent::__construct($pageModel);
-  }
-
-  public static function testInput($data)
-  {
-      $data = trim($data);
-      $data = htmlspecialchars($data);
-      $data = stripslashes($data);
-      return $data;
+    parent::__construct($pageModel);
   }
 
   public function validateLoginForm()

@@ -10,6 +10,7 @@ class Page_Model
 
   public function __construct($other)
   {
+    echo "page_model::construct" . PHP_EOL;
     //adds page, isPost, menu to object when created, if it isn't NULL
     //(instantiated from Page_Controller without the values being defined)
     if(!$other==NULL)
@@ -19,6 +20,14 @@ class Page_Model
       $this->menu = $other->menu;
       $this->form = $other->form;
     }
+  }
+
+  public static function testInput($data)
+  {
+    $data = trim($data);
+    $data = htmlspecialchars($data);
+    $data = stripslashes($data);
+    return $data;
   }
 
   //filter post input and return it
@@ -52,7 +61,7 @@ class Page_Model
   public function generateMenu()
   {
     $this->menu = array ('home' => array('title' => 'naar de startpagina', 'class'=>'larger-buttons-at-smaller-viewport-vw nav-link mx-1 my-1 bg-dark rounded text-white text-center', 'text' => 'HOME'),
-                         'webshop' => array('title' => 'koop hier jouw sokken!', 'class'=>'nav-link mx-1 my-1 bg-primary rounded text-white text-center', 'text' => 'WEBSHOP'),
+                         'shop' => array('title' => 'koop hier jouw sokken!', 'class'=>'nav-link mx-1 my-1 bg-primary rounded text-white text-center', 'text' => 'WEBSHOP'),
                          'top_5' => array('title' => 'top 5 producten', 'class'=>'nav-link mx-1 my-1 bg-primary rounded text-white text-center', 'text' => 'TOP 5'),
                          'about' => array('title' => 'over mij', 'class'=>'nav-link mx-1 my-1 bg-primary rounded text-white text-center', 'text' => 'ABOUT'),
                          'contact' => array('title' => 'stuur een bericht', 'class'=>'nav-link mx-1 my-1 bg-primary rounded text-white text-center', 'text' => 'CONTACT'));
