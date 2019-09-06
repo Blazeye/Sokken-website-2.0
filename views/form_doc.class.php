@@ -17,7 +17,6 @@ abstract class Form_Doc extends Basic_Doc
     {
         $this->formStart();
         $this->formContent();
-        /*$this->formSubmit("Verstuur", "btn btn-primary");*/
         $this->formEnd();
     }
 

@@ -1,7 +1,7 @@
 <?php
 
 
-class User_Controller
+class Shop_Controller
 {
   private $shopModel;
 

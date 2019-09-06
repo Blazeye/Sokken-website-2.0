@@ -1,9 +1,11 @@
 <?php
 require_once 'controllers/page_controller.class.php';
+require_once 'controllers/shop_controller.class.php';
 require_once 'controllers/user_controller.class.php';
 require_once 'models/database_model.class.php';
 require_once 'models/session_model.class.php';
 require_once 'models/page_model.class.php';
+require_once 'models/shop_model.class.php';
 require_once 'models/user_model.class.php';
 require_once 'views/home_doc.class.php';
 require_once 'views/about_doc.class.php';

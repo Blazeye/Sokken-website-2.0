@@ -1,11 +1,11 @@
 <?php
-include_once 'form_doc.class.php';
+require_once 'form_doc.class.php';
 
 abstract class Shop_Base_Doc extends Form_Doc
 {
-    public function __construct($myData)
+    public function __construct($model)
     {
-        parent::__construct($myData);
+        parent::__construct($model);
     }
 
     protected function mainContent()
@@ -41,9 +41,9 @@ abstract class Shop_Base_Doc extends Form_Doc
                   <table class="table">
                       <thead>
                           <tr>
-                          <th scope="col">' . $this->data['label'][0] . '</th>
-                          <th scope="col">' . $this->data['label'][1] . '</th>
-                          <th scope="col">' . $this->data['label'][2] . '</th>
+                          <th scope="col">' . $this->label[0] . '</th>
+                          <th scope="col">' . $this->label[1] . '</th>
+                          <th scope="col">' . $this->label[2] . '</th>
                           </tr>
                       </thead>';
     }

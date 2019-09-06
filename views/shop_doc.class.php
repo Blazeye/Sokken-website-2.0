@@ -3,9 +3,13 @@ require_once 'shop_base_doc.class.php';
 
 class Shop_Doc extends Shop_Base_Doc
 {
-    public function __construct($myData)
+    public $label = array();
+
+    public function __construct($model)
     {
-        parent::__construct($myData);
+        $this->label = array("name", "description", "price");
+        parent::__construct($model);
+
     }
     
     protected function mainContent()

@@ -1,7 +1,7 @@
 <?php
 require_once 'page_model.class.php';
 
-class User_Model extends Page_Model
+class Shop_Model extends Page_Model
 {
     public $button = '';
     public $items = array();
@@ -11,6 +11,14 @@ class User_Model extends Page_Model
     public function __construct($pageModel)
     {
         parent::__construct($pageModel);
+    }
+
+    public static function testInput($data)
+    {
+        $data = trim($data);
+        $data = htmlspecialchars($data);
+        $data = stripslashes($data);
+        return $data;
     }
 
     public function authenticateShop()
